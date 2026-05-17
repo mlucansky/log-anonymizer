@@ -903,7 +903,7 @@
           <button class="btn-sm" onclick="clearInput()" data-i18n="clearBtn">Vymazať</button>
         </div>
       </div>
-      <textarea class="editor" id="input" data-i18n-ph="inputPh" placeholder="Vlož sem error hlášku...&#10;&#10;Napr.: Connection failed for user john.doe@company.com&#10;at host db-prod-01.internal:5432 (192.168.10.5)&#10;Path: /var/app/config/database.yml&#10;Token: eyJhbGciOiJSUzI1NiJ9..."></textarea>
+      <textarea class="editor" id="input" data-i18n-ph="inputPh" placeholder="Vlož sem log alebo hlášku...&#10;&#10;Napr.: Connection failed for user john.doe@company.com&#10;at host db-prod-01.internal:5432 (192.168.10.5)&#10;Path: /var/app/config/database.yml&#10;Token: eyXXXX..."></textarea>
     </div>
 
     <div class="divider">
@@ -956,7 +956,7 @@ const TRANSLATIONS = {
     sampleLoaded: 'Ukážkový log načítaný',
     pasteBtn: '📋 Vložiť z clipboardu',
     clearBtn: 'Vymazať',
-    inputPh: 'Vlož sem log alebo hlášku...\n\nNapr.: Connection failed for user john.doe@company.com\nat host db-prod-01.internal:5432 (192.168.10.5)\nPath: /var/app/config/database.yml\nToken: eyJhbGciOiJSUzI1NiJ9...',
+    inputPh: 'Vlož sem log alebo hlášku...\n\nNapr.: Connection failed for user john.doe@company.com\nat host db-prod-01.internal:5432 (192.168.10.5)\nPath: /var/app/config/database.yml\nToken: eyXXXXXXXXXXXXXXXX...',
     runBtn: '▶ Anonymizovať',
     autoBtn: '⚡ Auto-detekcia',
     outputLabel: 'Výstup (anonymizovaný)',
@@ -1043,7 +1043,7 @@ const TRANSLATIONS = {
     sampleLoaded: 'Sample log loaded',
     pasteBtn: '📋 Paste from clipboard',
     clearBtn: 'Clear',
-    inputPh: 'Paste your log or message here...\n\nE.g.: Connection failed for user john.doe@company.com\nat host db-prod-01.internal:5432 (192.168.10.5)\nPath: /var/app/config/database.yml\nToken: eyJhbGciOiJSUzI1NiJ9...',
+    inputPh: 'Paste your log or message here...\n\nE.g.: Connection failed for user john.doe@company.com\nat host db-prod-01.internal:5432 (192.168.10.5)\nPath: /var/app/config/database.yml\nToken: eyXXXX...',
     runBtn: '▶ Anonymize',
     autoBtn: '⚡ Auto-detect',
     outputLabel: 'Output (anonymized)',
@@ -1184,13 +1184,13 @@ const SAMPLE_LOG = `2025-05-13 19:42:11.438 [ERROR] ConnectionPool - Failed to a
   Email: john.novak@acmecorp.com
   Source IP: 85.237.14.102
   User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64)
-  Session: sess_8f2a91c3d4e7b056
+  Session: sess_aabbccdd11223344
   Reason: Invalid MFA token
 
 2025-05-13 19:42:17.002 [WARN] APIGateway - Rate limit exceeded
   Client IP: 85.237.14.102
   Endpoint: POST /api/v2/users/authenticate
-  API Key: sk-live-4f8c2a91e3b7d056f2c8a3e1b9d4f7c2
+  API Key: sk-live-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
   Requests: 152/100 per minute
   Action: Throttled for 60s
 
