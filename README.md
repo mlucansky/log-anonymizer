@@ -1,6 +1,6 @@
 # Log Anonymizer
 
-A standalone, single-file HTML tool for anonymizing sensitive data in log files and error messages — **100% local, no data is ever sent anywhere**.
+A standalone, single-file HTML tool for anonymizing sensitive data in log files and error messages — **no data is ever sent anywhere**.
 
 🌐 **Live demo:** [psguy.eu/log-anonymizer](https://psguy.eu/log-anonymizer.html)
 
@@ -40,6 +40,12 @@ Storage used:
 - **localStorage** — persists rule profiles between sessions
 - **Clipboard API** — paste input / copy output
 - **Blob API** — download anonymized text or export rules
+
+### Why a single file?
+
+The entire tool — HTML, CSS and JavaScript — lives in one `.html` file by design. The goal is zero friction: download one file, open it, done. No npm install, no build step, no folder of dependencies to keep track of.
+
+This means some security scanners (like ZAP or betterleaks) will flag `unsafe-inline` in the Content Security Policy, because the JavaScript is embedded in the HTML rather than in a separate `.js` file. This is a known and accepted trade-off. The tool has no backend, no user accounts, no database and no server-side processing — the actual attack surface for XSS is effectively zero. Splitting the code into multiple files would solve the scanner warning but defeat the entire purpose of the project.
 
 ## Privacy
 
